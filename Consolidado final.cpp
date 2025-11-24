@@ -2,13 +2,13 @@
 #include <string>
 using namespace std;
 
-// NODO DEL ¡RBOL
+// NODO DEL √ÅRBOL
 // Cada nodo es una persona
 struct Nodo {
-    string codigo;        // cÛdigo de la persona
+    string codigo;        // c√≥digo de la persona
     string nombre;        // nombre completo
     string parentesco;    // alumno, padre, madre, etc.
-    string codigoAlumno;  // cÛdigo del alumno al que pertenece
+    string codigoAlumno;  // c√≥digo del alumno al que pertenece
 
     Nodo* izquierda;
     Nodo* derecha;
@@ -40,21 +40,21 @@ Nodo* insertar(Nodo* raiz,
                string parentesco,
                string codigoAlumno)
 {
-    // si el ·rbol est· vacÌo, este nodo ser· la raÌz
+    // si el √°rbol est√° vac√≠o, este nodo ser√° la ra√≠z
     if (raiz == NULL)
         return crearNodo(codigo, nombre, parentesco, codigoAlumno);
 
-    // si el cÛdigo es menor, va al lado izquierdo
+    // si el c√≥digo es menor, va al lado izquierdo
     if (codigo < raiz->codigo) {
         raiz->izquierda = insertar(raiz->izquierda,
                                    codigo, nombre, parentesco, codigoAlumno);
     }
-    // si el cÛdigo es mayor, va al lado derecho
+    // si el c√≥digo es mayor, va al lado derecho
     else if (codigo > raiz->codigo) {
         raiz->derecha = insertar(raiz->derecha,
                                  codigo, nombre, parentesco, codigoAlumno);
     }
-    // si el cÛdigo ya existe, no lo insertamos
+    // si el c√≥digo ya existe, no lo insertamos
     else {
         cout << "El codigo ya existe. No se puede registrar de nuevo." << endl;
     }
@@ -142,7 +142,7 @@ Nodo* eliminarNodo(Nodo* raiz, string codigo)
         raiz->derecha = eliminarNodo(raiz->derecha, codigo);
     }
     else {
-        // aquÌ encontramos el nodo que queremos borrar
+        // aqu√≠ encontramos el nodo que queremos borrar
 
         // caso 1: sin hijos
         if (raiz->izquierda == NULL && raiz->derecha == NULL) {
@@ -181,7 +181,7 @@ Nodo* eliminarNodo(Nodo* raiz, string codigo)
 }
 
 
-// Liberar memoria del ·rbol
+// Liberar memoria del √°rbol
 
 void liberarArbol(Nodo* raiz)
 {
@@ -298,3 +298,4 @@ int main()
     liberarArbol(raiz);
     return 0;
 }
+
